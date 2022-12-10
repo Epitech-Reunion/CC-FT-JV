@@ -47,7 +47,7 @@ class Player():
                 pass # 1.2 Faites en sorte que le joueur ne puisse pas quitter l'écran en allant trop vers la gauche
 
 # 1.1 Changez la position initiale du joueur
-player = Player(x=0, y=550)
+player = Player(x=0, y=0)
 
 running = True
 while running:
