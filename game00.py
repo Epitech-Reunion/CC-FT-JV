@@ -24,7 +24,7 @@ class Player():
     y: float
 
     direction: str = ""
-    speed: float = 4
+    speed: float = 200
     alive: bool = True
     score: int = 0
 
@@ -35,9 +35,11 @@ class Player():
     def update(self):
         if self.alive:
             if self.direction == "left":
-                self.x -= 0
+                self.x -= player.speed * dt
             elif self.direction == "right":
-                self.x += 0
+                # 1.2 Il faut donner une vitesse de déplacement au joueur
+                # une vitesse de 0 signifie que le joueur ne se déplacera pas. 
+                self.x += 0 
 
             if self.x > 370:
                 self.x = 370
@@ -45,7 +47,7 @@ class Player():
                 pass # 1.2 Faites en sorte que le joueur ne puisse pas quitter l'écran en allant trop vers la gauche
 
 # 1.1 Changez la position initiale du joueur
-player = Player(x=0, y=0)
+player = Player(x=0, y=550)
 
 running = True
 while running:
@@ -59,7 +61,6 @@ while running:
             player.direction = "left"
         elif key_press[pygame.K_RIGHT]:
             pass # 1.2 Changez la direction du joueur en fonction de la touche du clavier utilisée
-
 
 
     win.fill(BLACK)
