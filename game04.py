@@ -19,11 +19,11 @@ YELLOW = (255, 255, 0)
 
 @dataclass
 class Player():
-    x: int
-    y: int
+    x: float
+    y: float
 
     direction: str = ""
-    speed: int = 4
+    speed: float = 4
     alive: bool = True
     score: int = 0
 
@@ -48,8 +48,8 @@ class Player():
 
 @dataclass()
 class Bullet():
-    x: int
-    y: int
+    x: float
+    y: float
     is_shot: bool = False
     speed: int = 4
 
@@ -72,10 +72,10 @@ class Bullet():
 
 @dataclass
 class Enemy():
-    x: int
-    y: int
+    x: float
+    y: float
     color: tuple = RED
-    speed: int = 2
+    speed: float = 2
     alive: bool = True
 
     def draw(self):
