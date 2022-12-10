@@ -1,4 +1,4 @@
-# Simple shooter - {EPITECH.} Focus Tech Jeux Video - Dec 2021
+# Simple shooter - {EPITECH.} Focus Tech Jeux Video - Dec 2022
 
 Découverte de la programmation de jeu video avec Python et Pygame
 
