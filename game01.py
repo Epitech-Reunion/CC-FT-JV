@@ -54,6 +54,7 @@ class Bullet():
         # 2.1 Action a faire lorsque le joueur tire
         # Initialisez la position du projectile
         # Le projectile est tiré
+        pass
 
     def draw(self):
         if self.is_shot:
@@ -62,9 +63,9 @@ class Bullet():
 
     def update(self):
         if self.is_shot:
-            # 2.1 Que fait-on dans ce cas là ?
+            pass # 2.1 Que fait-on dans ce cas là ?
         if self.y < 0:
-            # 2.2 Que fait-on dans ce cas là ?
+            pass # 2.2 Que fait-on dans ce cas là ?
 
 player = Player(x=200, y=550)
 bullet = Bullet(x=200, y=550)

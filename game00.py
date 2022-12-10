@@ -40,7 +40,7 @@ class Player():
         if self.x > 370:
             self.x = 370
         elif self.x < 0:
-            # 1.2 Faites en sorte que le joueur ne puisse pas quitter l'écran en allant trop vers la gauche
+            pass # 1.2 Faites en sorte que le joueur ne puisse pas quitter l'écran en allant trop vers la gauche
 
 # 1.1 Changez la position initiale du joueur
 player = Player(x=0, y=0)
@@ -55,7 +55,7 @@ while running:
         if key_press[pygame.K_LEFT]:
             player.direction = "left"
         elif key_press[pygame.K_RIGHT]:
-            # 1.2 Changez la direction du joueur en fonction de la touche du clavier utilisée
+            pass # 1.2 Changez la direction du joueur en fonction de la touche du clavier utilisée
 
 
 

@@ -101,6 +101,7 @@ class Enemy():
     def collide_with_ship(self):
         if self.alive:
             # 4.2 Inspirez vous du code de la fonction collide_with_bullet pour gérer la collision entre le joueur et l'ennemi
+            pass
 
 
 player = Player(x=200, y=550)
@@ -132,6 +133,8 @@ while running:
     enemy.draw()
     if enemy.collide_with_bullet():
         # 4.1 L'ennemi et la balle entrent en collision
+        pass
     if enemy.collide_with_ship():
         # 4.2 L'ennemi et le joueur entrent en collision
+        pass
     pygame.display.update()

@@ -82,6 +82,7 @@ class Enemy():
 
     def update(self):
         # 2.2 Ajoutez le pattern de déplacement de l'ennemi 
+        pass
 
 player = Player(x=200, y=550)
 bullet = Bullet(x=200, y=550)
