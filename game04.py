@@ -3,6 +3,8 @@ from dataclasses import dataclass
 from pygame.constants import KEYDOWN
 
 pygame.init()
+clock = pygame.time.Clock()
+
 
 # Notre fenêtre de jeu aura une dimenssion de 400x600 pixels
 win = pygame.display.set_mode((400, 600))
@@ -113,6 +115,7 @@ enemy = Enemy(x=0, y=0)
 
 running = True
 while running:
+    print(int(clock.get_fps()))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
