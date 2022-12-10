@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from pygame.constants import KEYDOWN
 
 pygame.init()
+clock = pygame.time.Clock()
 
 # Notre fenêtre de jeu aura une dimenssion de 400x600 pixels
 win = pygame.display.set_mode((400, 600))
@@ -23,7 +24,7 @@ class Player():
     y: float
 
     direction: str = ""
-    speed: float = 4
+    speed: float = 400
     alive: bool = True
     score: int = 0
 
@@ -34,9 +35,9 @@ class Player():
     def update(self):
         if self.alive:
             if self.direction == "left":
-                self.x -= self.speed
+                self.x -= self.speed * dt
             elif self.direction == "right":
-                self.x += self.speed
+                self.x += self.speed * dt
 
             if self.x > 370:
                 self.x = 370
@@ -48,7 +49,7 @@ class Bullet():
     x: float
     y: float
     is_shot: bool = False
-    speed: float = 4
+    speed: float = 400
 
     def shoot(self):
         # 2.1 Action a faire lorsque le joueur tire
@@ -72,6 +73,7 @@ bullet = Bullet(x=200, y=550)
 
 running = True
 while running:
+    dt = clock.tick(60)/1000
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False

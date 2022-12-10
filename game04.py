@@ -5,7 +5,6 @@ from pygame.constants import KEYDOWN
 pygame.init()
 clock = pygame.time.Clock()
 
-
 # Notre fenêtre de jeu aura une dimenssion de 400x600 pixels
 win = pygame.display.set_mode((400, 600))
 
@@ -25,7 +24,7 @@ class Player():
     y: float
 
     direction: str = ""
-    speed: float = 4
+    speed: float = 400
     alive: bool = True
     score: int = 0
 
@@ -39,9 +38,9 @@ class Player():
     def update(self):
         if self.alive:
             if self.direction == "left":
-                self.x -= self.speed
+                self.x -= self.speed * dt
             elif self.direction == "right":
-                self.x += self.speed
+                self.x += self.speed * dt
 
             if self.x > 370:
                 self.x = 370
@@ -53,7 +52,7 @@ class Bullet():
     x: float
     y: float
     is_shot: bool = False
-    speed: int = 4
+    speed: int = 400
 
     def shoot(self):
         if player.alive:
@@ -70,14 +69,14 @@ class Bullet():
         if self.y < 0:
             self.is_shot = False
         if self.is_shot:
-            self.y -= self.speed
+            self.y -= self.speed * dt
 
 @dataclass
 class Enemy():
     x: float
     y: float
     color: tuple = RED
-    speed: float = 2
+    speed: float = 200
     alive: bool = True
 
     def draw(self):
@@ -95,7 +94,7 @@ class Enemy():
                 self.speed = -self.speed
             if self.y > 630:
                 self.speed = 0
-            self.x += self.speed
+            self.x += self.speed * dt
 
     def collide_with_ship(self):
         if self.alive:
@@ -115,7 +114,7 @@ enemy = Enemy(x=0, y=0)
 
 running = True
 while running:
-    print(int(clock.get_fps()))
+    dt = clock.tick(60)/1000
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
