@@ -39,15 +39,15 @@ class Player():
             elif self.direction == "right":
                 # 1.2 Il faut donner une vitesse de déplacement au joueur
                 # une vitesse de 0 signifie que le joueur ne se déplacera pas. 
-                self.x += 0 
+                self.x += player.speed * dt 
 
             if self.x > 370:
                 self.x = 370
             elif self.x < 0:
-                pass # 1.2 Faites en sorte que le joueur ne puisse pas quitter l'écran en allant trop vers la gauche
+                self.x = 0 # 1.2 Faites en sorte que le joueur ne puisse pas quitter l'écran en allant trop vers la gauche
 
 # 1.1 Changez la position initiale du joueur
-player = Player(x=0, y=0)
+player = Player(x=200, y=550)
 
 running = True
 while running:
